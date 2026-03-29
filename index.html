@@ -5,5 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="DateTime">
+      <p id="Clock"></p>
+      <p id="Date"></p>
+    </div>
+    <h1 class="Title" contenteditable="true">Hello There</h1>
+
+    <div class="BookMarks">
+      <h2>Snabblänkar</h2>
+    </div>
+
+    <div class="Weather">
+      <h2>Vädret</h2>
+    </div>
+
+    <div class="Advice">
+      <h1 id="Advice">Loading Advice...</h1>
+    </div>
+
+    <div class="WriteField">
+      <textarea
+        contenteditable="true"
+        class="content"
+        id="notes"
+        placeholder="WRITE WRITE WRITE"
+      ></textarea>
+    </div>
+    <script src="./js/clock.js" onload="GetDateTime()"></script>
+    <script src="./js/Advice.js"></script>
+  </body>
 </html>
