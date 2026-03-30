@@ -1,38 +1,66 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>SimonFCO Dashboard</title>
   </head>
   <body>
-    <div class="DateTime">
-      <p id="Clock"></p>
-      <p id="Date"></p>
-    </div>
-    <h1 class="Title" contenteditable="true">Hello There</h1>
+    <header>
+      <div class="DateTime">
+        <time id="Clock"></time>
+        <time id="Date"></time>
+      </div>
+    </header>
 
-    <div class="BookMarks">
-      <h2>Snabblänkar</h2>
-    </div>
-
-    <div class="Weather">
-      <h2>Vädret</h2>
+    <div class="Title" id="Title" contenteditable="true">
+      <h1>SimonFCO Dashboard</h1>
     </div>
 
-    <div class="Advice">
-      <h1 id="Advice">Loading Advice...</h1>
-    </div>
+    <section class="dashboard-container">
+      <div class="DashboardObject" id="BookMarks">
+        <h2>Snabblänkar</h2>
+      </div>
 
-    <div class="WriteField">
-      <textarea
-        contenteditable="true"
-        class="content"
-        id="notes"
-        placeholder="WRITE WRITE WRITE"
-      ></textarea>
-    </div>
+      <div class="DashboardObject" id="WeatherContainer">
+        <h2>Dagens väder</h2>
+        <div class="weatherObject" id="WeatherToday"></div>
+        <div class="weatherObject" id="WeatherTypeToday"></div>
+        <div class="weatherObject" id="WeatherTypeTodayIcon"></div>
+
+        <div class="weatherObject" id="WeatherTomorrow"></div>
+        <div class="weatherObject" id="WeatherTypeTomorrow"></div>
+        <div class="weatherObject" id="WeatherTypeTomorrowIcon"></div>
+
+        <div class="weatherObject" id="WeatherTomorrowMorrow"></div>
+        <div class="weatherObject" id="WeatherTypeTomorrowMorrow"></div>
+        <div class="weatherObject" id="WeatherTypeTomorrowMorrowIcon"></div>
+      </div>
+
+      <div class="DashboardObject" id="AdviceContainer">
+        <h2>Tips :)</h2>
+        <p class="Advice" id="Advice">Loading Advice...</p>
+      </div>
+
+      <div class="DashboardObject" id="WriteField">
+        <h2>Anteckningar</h2>
+        <div class="NoteInfo">
+          <textarea
+            class="content"
+            id="notes"
+            placeholder="WRITE WRITE WRITE"
+          ></textarea>
+        </div>
+      </div>
+
+      <button id="WallpaperChanger-button">CHANGE WALLPAPER</button>
+    </section>
+
     <script src="./js/clock.js" onload="GetDateTime()"></script>
     <script src="./js/Advice.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/Title.js"></script>
+    <script src="./js/ChangeBackground.js"></script>
   </body>
 </html>

@@ -1,0 +1,187 @@
+body {
+  background-image: url("../Images/windosXp.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 100px;
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.DateTime {
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  display: inline-block;
+  padding: 5px 100px;
+  border-radius: 20px;
+}
+
+#Clock {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2px;
+}
+
+#Date {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.Title {
+  color: rgb(0, 0, 0);
+  font-size: 60px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.6);
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  resize: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.DashboardObject {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 10px;
+
+  flex: 1 1 300px;
+  min-height: 400px;
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+#WriteField {
+  padding: 0;
+}
+
+.DashboardObject h2 {
+  margin-top: -5px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.6);
+}
+
+#notes {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  resize: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  box-sizing: border-box;
+  padding: 20px;
+  outline: none;
+}
+
+#WallpaperChanger-button {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+#WallpaperChanger-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateX(-50%) translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+#WallpaperChanger-button:active {
+  transform: translateX(-50%) translateY(2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Advice {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  text-align: center;
+}
+
+#WriteField {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-bottom: 25px;
+}
+
+#notes {
+  width: 100%;
+  background: white;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}

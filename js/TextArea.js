@@ -1,7 +1,7 @@
 function saveData() {
-  const Enotes = document.getElementById("notes");
-  Enotes.value = localStorage.getItem("note") || "";
-  Enotes.addEventListener("input", () => {
-    localStorage.setItem("note", Enotes.value);
+  const notes = document.getElementById("notes");
+  notes.value = localStorage.getItem("note") || "";
+  notes.addEventListener("input", () => {
+    localStorage.setItem("note", notes.value);
   });
 }
