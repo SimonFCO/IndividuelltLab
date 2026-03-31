@@ -18,9 +18,37 @@
       <h1>SimonFCO Dashboard</h1>
     </div>
 
+    <!-- THE MODAL -->
+    <div id="bookmark-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Länk till en länk</h3>
+
+        <label>Titel:</label>
+        <input type="text" id="bookmark-text-input" placeholder="e.g. Google" />
+
+        <label>Link (URL):</label>
+        <input
+          type="text"
+          id="bookmark-link-input"
+          placeholder="e.g. https://google.com"
+        />
+
+        <div class="modal-buttons">
+          <button id="save-btn">Save</button>
+          <button id="close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+
     <section class="dashboard-container">
       <div class="DashboardObject" id="BookMarks">
         <h2>Snabblänkar</h2>
+        <!-- ADDED THE bookmark-list CLASS HERE -->
+        <div id="bookmark-container" class="bookmark-list"></div>
+        <!-- ADDED THE bottom-btn CLASS HERE -->
+        <button id="MakeBookmark-button" class="bottom-btn">
+          Lägg Till Ny Länk
+        </button>
       </div>
 
       <div class="DashboardObject" id="WeatherContainer">
@@ -51,5 +79,6 @@
     <script src="./js/weather.js"></script>
     <script src="./js/Title.js"></script>
     <script src="./js/ChangeBackground.js"></script>
+    <script src="./js/bookmarks.js"></script>
   </body>
 </html>

@@ -17,17 +17,18 @@ header {
   width: 100%;
   margin-top: 10px;
 }
+
 .DateTime {
   background-color: rgb(245, 245, 245);
   text-align: center;
   display: inline-block;
-  padding: 5px 100px;
+  padding: 5px clamp(20px, 5vw, 100px);
   border-radius: 20px;
 }
 
 #Clock {
   margin: 10px;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   font-weight: bold;
   font-family: display, sans-serif;
   color: rgb(0, 0, 0);
@@ -36,7 +37,7 @@ header {
 
 #Date {
   margin: 0;
-  font-size: 20px;
+  font-size: clamp(14px, 3.5vw, 20px);
   font-family: display, sans-serif;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.9);
@@ -44,11 +45,11 @@ header {
 
 .Title {
   color: rgb(29, 29, 29);
-  font-size: 60px;
+  font-size: clamp(15px, 6vw, 30px);
   text-align: center;
   font-family: display, sans-serif;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: clamp(10px, 4vw, 20px);
+  margin-bottom: clamp(10px, 4vw, 20px);
   padding: 0 20px;
   text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.6);
 }
@@ -58,10 +59,11 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+
+  gap: clamp(15px, 3vw, 30px);
   width: 100%;
   max-width: 1400px;
-  padding: 0 30px;
+  padding: 0 clamp(15px, 3vw, 30px);
   box-sizing: border-box;
 }
 
@@ -69,11 +71,11 @@ section {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  padding: 20px;
+  padding: clamp(15px, 3vw, 20px);
   border-radius: 10px;
 
-  flex: 1 1 300px;
-  min-height: 400px;
+  flex: 1 1 220px;
+  min-height: clamp(300px, 40vh, 400px);
   margin: 0;
   box-sizing: border-box;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -94,26 +96,35 @@ section {
 #notes {
   width: 100%;
   height: 100%;
-  min-height: 360px;
+  min-height: clamp(250px, 30vh, 360px);
   resize: none;
   border: none;
-  background: transparent;
+  background: white;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
   font-family: display, sans-serif;
+  padding: 10px;
   box-sizing: border-box;
-  padding: 20px;
   outline: none;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 #WallpaperChanger-button {
   position: fixed;
-  bottom: 30px;
+  bottom: clamp(15px, 3vw, 30px);
   left: 50%;
   transform: translateX(-50%);
   background: rgb(216, 216, 216);
   padding: 12px 30px;
   border-radius: 30px;
   color: rgb(0, 0, 0);
-  font-size: 16px;
+  width: max-content;
+  max-width: 90vw;
+  font-size: clamp(12px, 3vw, 16px);
   font-weight: bold;
   font-family: display, sans-serif;
   letter-spacing: 1px;
@@ -131,39 +142,22 @@ section {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   color: rgb(0, 0, 0);
-  font-size: 25px;
+  font-size: clamp(18px, 4vw, 25px);
   text-align: center;
-}
-
-#notes {
-  width: 100%;
-  background: white;
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  font-family: display, sans-serif;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
 }
 
 #weather-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-family:
-    Arial, Helvetica, sans-serif; /* Prevents Zapfino from messing up spacing */
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
-  max-width: 350px;
 }
 
 .weather-card {
   background-color: #ffffff;
   display: flex;
-  flex-direction: row; /* Puts Icon on Left, Details on Right */
+  flex-direction: row;
   align-items: center;
   padding: 15px 20px;
   border-radius: 12px;
@@ -177,15 +171,14 @@ section {
   font-size: 3rem;
   margin-right: 15px;
   line-height: 1;
-  flex-shrink: 0; /* Stops icon from squishing */
+  flex-shrink: 0;
 }
 
-/* This is the wrapper that holds the Right Side */
 .weather-details {
   display: flex;
-  flex-direction: column; /* Forces the Day to sit on top of the Blobs */
+  flex-direction: column;
   justify-content: center;
-  gap: 8px; /* The exact distance between Day and Blobs */
+  gap: 8px;
   flex: 1;
 }
 
@@ -197,10 +190,9 @@ section {
   margin: 0;
 }
 
-/* The wrapper that holds Temp and Status */
 .weather-blobs {
   display: flex;
-  flex-direction: row; /* Puts Temp and Status side-by-side */
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -224,4 +216,172 @@ section {
 .weather-type {
   background-color: #dbeafe;
   color: #1e40af;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: clamp(20px, 5vw, 30px);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(90%, 320px);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #333;
+}
+
+.modal-content label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+}
+
+.modal-content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+#save-btn,
+#close-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  flex: 1;
+  margin: 0 5px;
+}
+
+#save-btn {
+  background-color: #0066cc;
+  color: white;
+}
+
+#save-btn:hover {
+  background-color: #0052a3;
+}
+
+#close-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+#close-btn:hover {
+  background-color: #cc0000;
+}
+
+#BookMarks {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookmark-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 5px;
+}
+
+.bookmark-card {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bookmark-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.bookmark-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.bookmark-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookmark-link:hover {
+  color: #0066cc;
+}
+
+.bottom-btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.bottom-btn:hover {
+  background-color: #0052a3;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
 }
