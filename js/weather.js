@@ -2,7 +2,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getWeather);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    document.body.innerHTML += "Geolocation is not supported by this browser.";
   }
 }
 
@@ -17,7 +17,7 @@ function getWeatherCode(code) {
   }
   if (code >= 95) return { text: "Lightning", icon: "🌩️" };
 
-  return { text: "Unknown Weather" };
+  return { text: "Unknown", icon: "❓" };
 }
 
 async function getWeather(position) {
@@ -34,21 +34,37 @@ async function getWeather(position) {
 
     const data = await response.json();
     const daily = data.daily;
+    const date = new Date();
+    const weekday = date.toLocaleDateString("sv-SE", { weekday: "long" });
+
+    const dayNames = ["Idag", "Imorgon", weekday];
+
+    const weatherContainer = document.getElementById("weather-container");
+    weatherContainer.innerHTML = "";
 
     for (let i = 0; i < 3; i++) {
       const temp = daily.temperature_2m_max[i];
-      const WeatherCode = daily.weather_code[i];
-      const weatherDetails = getWeatherCode(WeatherCode);
+      const weatherCode = daily.weather_code[i];
+      const weatherDetails = getWeatherCode(weatherCode);
+      const dayName = dayNames[i];
 
-      document.getElementById(
-        `Weather${i === 0 ? "Today" : i === 1 ? "Tomorrow" : "TomorrowMorrow"}`,
-      ).innerHTML = `${temp}°C`;
-      document.getElementById(
-        `WeatherType${i === 0 ? "Today" : i === 1 ? "Tomorrow" : "TomorrowMorrow"}`,
-      ).innerHTML = weatherDetails.text;
-      document.getElementById(
-        `WeatherType${i === 0 ? "Today" : i === 1 ? "Tomorrow" : "TomorrowMorrow"}Icon`,
-      ).innerHTML = weatherDetails.icon;
+      const dayDiv = document.createElement("div");
+      dayDiv.className = "weather-card";
+
+      dayDiv.innerHTML = `
+        <div class="weather-icon">${weatherDetails.icon}</div>
+        
+        <div class="weather-details">
+          <div class="weather-day">${dayName}</div>
+          
+          <div class="weather-blobs">
+            <span class="weather-temp">${temp}°C</span>
+            <span class="weather-type">${weatherDetails.text}</span>
+          </div>
+        </div>
+      `;
+
+      weatherContainer.appendChild(dayDiv);
     }
   } catch (error) {
     console.error("Hi" + error);
