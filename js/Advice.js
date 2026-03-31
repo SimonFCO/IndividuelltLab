@@ -14,7 +14,7 @@ async function getAdvice() {
   } catch (error) {
     console.error("Hi" + error);
     throw new Error(
-      "This one does not have a picture, on to the next one " + error,
+      "This one does not have a good advice, on to the next one " + error,
       getAdvice(),
     );
   }
