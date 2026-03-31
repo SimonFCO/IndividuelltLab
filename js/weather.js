@@ -34,7 +34,7 @@ async function getWeather(position) {
 
     const data = await response.json();
     const daily = data.daily;
-    const date = new Date();
+    const date = new Date(daily.time[2]);
     const weekday = date.toLocaleDateString("sv-SE", { weekday: "long" });
 
     const dayNames = ["Idag", "Imorgon", weekday];
