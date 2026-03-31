@@ -7,9 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   font-family: "zapfino", cursive;
-  padding-bottom: 100px;
 }
 
 header {
@@ -120,15 +118,16 @@ section {
   transform: translateX(-50%);
   background: rgb(216, 216, 216);
   padding: 12px 30px;
-  border-radius: 30px;
   color: rgb(0, 0, 0);
   width: max-content;
-  max-width: 90vw;
   font-size: clamp(12px, 3vw, 16px);
   font-weight: bold;
   font-family: display, sans-serif;
   letter-spacing: 1px;
-  z-index: 100;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
 #WallpaperChanger-button:active {
@@ -162,7 +161,6 @@ section {
   padding: 15px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  width: 100%;
   box-sizing: border-box;
   text-align: left;
 }
@@ -188,13 +186,6 @@ section {
   color: #333;
   line-height: 1.2;
   margin: 0;
-}
-
-.weather-blobs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 .weather-temp,
@@ -224,8 +215,7 @@ section {
 
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
+
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);

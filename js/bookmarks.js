@@ -73,6 +73,8 @@ MakeBookmarkButton.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
+  textInput.value = "";
+  linkInput.value = "";
   bookmarkModal.classList.add("hidden");
 });
 
