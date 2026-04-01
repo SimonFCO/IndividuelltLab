@@ -12,11 +12,10 @@ async function getAdvice() {
 
     document.getElementById("Advice").innerHTML = `${advice}`;
   } catch (error) {
-    console.error("Hi" + error);
-    throw new Error(
-      "This one does not have a good advice, on to the next one " + error,
-      getAdvice(),
+    console.error(
+      "This one does not have a good advice, on to the next one" + error,
     );
+    getAdvice();
   }
 }
 getAdvice();
