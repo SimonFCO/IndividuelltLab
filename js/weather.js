@@ -7,6 +7,7 @@ function getLocation() {
 }
 
 function getWeatherCode(code) {
+  // ALL CREDITS TO RasmusFPS I DID NOT WANT TO DEAL WITH THIS
   if (code == 0) return { text: "Clear", icon: "🔆" };
   if (code == 1 || code == 2 || code == 3)
     return { text: "Cloudy", icon: "☁️" };
